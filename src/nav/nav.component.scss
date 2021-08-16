@@ -1,0 +1,155 @@
+header{
+   top: 0;
+   left: 0;
+   position: sticky;
+}
+
+img{
+   width: calc(20px + 8 * ((100vw - 320px) / (1280 - 320)));
+   height: calc(20px + 8 * ((100vw - 320px) / (1280 - 320)));
+}
+
+.closeNav{
+   top: 0;
+   left: 0;
+   width: 50px;
+   height: 100vh;
+   display: flex;
+   transition: .3s;
+   position: absolute;
+   align-items: center;
+   flex-direction: column;
+   background-color: #1A1B1D;
+   justify-content: space-between;
+   .active{
+      border-top: 2px solid #01AA71 !important;
+      border-bottom: 2px solid #01AA71 !important;
+   }
+   ul{
+      width: 100%;
+      display: flex;
+      height: 500px;
+      transition: .5s;
+      flex-direction: column;
+      justify-content: space-evenly;
+      li{
+         padding: 10px;
+         display: flex;
+         align-items: center;
+         flex-direction: column;
+         border: 2px solid #1A1B1D;
+      }
+      li:hover{
+         border-top: 2px solid gray !important;
+         border-bottom: 2px solid gray !important;
+      }
+   }
+}
+
+
+.openNav{
+   top: 0;
+   left: 0;
+   width: 300px;
+   height: 100vh;
+   display: flex;
+   transition: .3s;
+   position: absolute;
+   align-items: flex-end;
+   flex-direction: column;
+   background-color: #191A1C;
+   @media screen and(max-width: 320px) {
+      width: 100%!important;
+   }
+   .active > a{
+      color: #01AA71 !important;
+   }
+   ul{
+      width: 100%;
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      li{
+         margin: 20px auto;
+         a{
+            color: white;
+            font-weight: 600;
+            font-size: calc(16px + 2 * ((100vw - 320px) / (1280 - 320)));
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+         }
+      }
+      a:hover{
+         color: gray !important;
+      }
+   }
+}
+
+.open{
+   width: 100%;
+   height: 30px;
+   display: flex;
+   background: #01AA71;
+   align-items: flex-end;
+   flex-direction: column;
+   :nth-child(1){
+      margin: 5px;
+      width: 20px;
+      height: 20px;
+      background: black;
+      clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+   }
+   :nth-child(1):hover{
+         transition: .5s;
+         background: white;
+         transform: rotate(180deg);
+   }
+}
+
+.close{
+   margin: 0;
+   width: 100%;
+   height: 30px;
+   display: flex;
+   align-items: center;
+   background: #01AA71;
+   flex-direction: column;
+   justify-content: center;
+   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+   :nth-child(n){
+      margin: 2px;
+      height: 2px;
+      width: 20px;
+      transition: .3s;
+      background-color: rgb(0, 0, 0);
+   }
+}
+.close:hover{
+   :nth-child(n){
+      height: 4px;
+      width: 30px;
+      background-color: white;
+   }
+}
+
+
+
+.closeNavMain{
+   top: 0;
+   left: 54px;
+   z-index: -1;
+   transition: .3s;
+   min-height: 125vh;
+   position: relative;
+   max-width: calc(100% - 54px);
+}
+
+.openNavMain{
+   top: 0;
+   left: 300px;
+   z-index: -1;
+   transition: .3s;
+   min-height: 125vh;
+   position: relative;
+   max-width: calc(100% - 300px);
+}

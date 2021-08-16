@@ -1,0 +1,34 @@
+<header>
+   <nav
+   [ngClass]="{
+      closeNav: !style,
+      openNav: style
+   }"
+   >
+      <div class="close" (click)="style = !style" 
+      [ngClass]="{
+         close: !style,
+         open: style
+      }"
+      >
+   <div></div>
+   <div></div>
+   <div></div>
+   </div>
+      <ul>
+         <li *ngFor="let n of img" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <a *ngIf='style'  routerLink='{{n.rout}}'><p>{{n.name}}</p></a>
+            <a *ngIf='!style' routerLink='{{n.rout}}'><img src={{n.path}} alt={{n.alt}}></a>
+         </li>
+      </ul>
+   </nav>
+</header>
+
+<main
+[ngClass]="{
+   closeNavMain: !style,
+   openNavMain: style
+}"
+>
+   <router-outlet></router-outlet>  
+</main>
